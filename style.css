@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -15,136 +14,301 @@
     --text-color: #333;
     --primary-color: #4c4cff;
     --secondary-color: #808080;
+    --shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
 }
 
-/* Body */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: var(--text-color);
-}
-
-/* Container */
-.container {
-    max-width: 900px;
-    width: 100%;
     padding: 20px;
 }
 
-/* Profile Card */
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 40px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
 .profile-card {
     background-color: var(--card-background);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 30px;
 }
 
 .profile-pic img {
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.1);
 }
 
 .profile-details .intro h2 {
-    font-size: 1.8em;
+    font-size: 2em;
     color: var(--primary-color);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .profile-details .intro h4 {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: var(--secondary-color);
     margin-bottom: 15px;
 }
 
 .social a {
     color: var(--blue);
-    font-size: 1.5em;
-    margin-right: 10px;
+    font-size: 1.6em;
+    margin-right: 12px;
     text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social a:hover {
+    transform: scale(1.1);
 }
 
 .contact-info .row {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin: 10px 0;
+    gap: 20px;
+    margin: 15px 0;
 }
 
 .contact-info .icon i {
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 .contact-info .content span {
-    font-size: 0.9em;
+    font-size: 1em;
     color: var(--secondary-color);
 }
 
 .contact-info .content h5 {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: var(--text-color);
 }
 
-/* About Section */
+
 .about {
     background-color: var(--card-background);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
 }
 
 .about h1 {
-    font-size: 2em;
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.about h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+
+.work {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.workbox {
+    flex: 1 1 calc(50% - 25px);
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.workbox:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 30px;
+}
+
+.workbox .icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.workbox .desc h3 {
+    font-size: 1.3em;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.about p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Work Section */
-.work {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.workbox {
-    flex: 1 1 calc(50% - 20px);
-    background-color: var(--card-background);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    gap: 15px;
-}
-
-.workbox .icon img {
-    width: 50px;
-    height: 50px;
-}
-
-.workbox .desc h3 {
-    font-size: 1.2em;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
 .workbox .desc p {
-    font-size: 0.95em;
+    font-size: 1em;
     color: var(--text-color);
-    line-height: 1.4;
+    line-height: 1.6;
 }
+
+
+@media screen and (max-width: 768px) {
+    .workbox {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--blue);
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+
+.projects {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.projects h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.project-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    position: relative;
+    width: calc(33% - 20px);
+    height: 200px;
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 30px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+.project-card .overlay h3 {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+@media screen and (max-width: 768px) {
+    .project-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-card {
+        width: 100%;
+    }
+}
+
+    
